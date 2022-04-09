@@ -1,0 +1,29 @@
+GET http://localhost:3030/users
+
+###
+
+POST http://localhost:3030/users/login
+content-type: application/json
+
+{
+    "phone": "87759766409",
+    "password": "qwerty"
+}
+
+###
+
+get http://localhost:3030/shop
+
+###
+
+get http://localhost:3030/shop/2
+
+###
+
+POST http://localhost:3030/users/login
+content-type: application/json
+
+{
+    "number": "87759766409",
+    "password": "qwerty"
+}

@@ -35,7 +35,7 @@ CREATE TABLE alarm (
   id INT AUTO_INCREMENT PRIMARY KEY,
   type VARCHAR(30) NOT NULL,
   number VARCHAR(20) NOT NULL,
-  time DATE,
+  time VARCHAR(30) NOT NULL
 );
 
 INSERT INTO shop (number, electricityUsage) VALUES 

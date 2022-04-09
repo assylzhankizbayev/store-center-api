@@ -27,3 +27,17 @@ content-type: application/json
     "number": "87759766409",
     "password": "qwerty"
 }
+
+###
+
+GET http://localhost:3030/alarm
+
+###
+
+POST http://localhost:3030/alarm
+content-type: application/json
+
+{
+    "type": "Пожар",
+    "number": "2"
+}

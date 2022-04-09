@@ -7,8 +7,8 @@ class AlarmController {
   }
 
   async add(req, res) {
-    const alarm = new AlarmModel(req.body.type, req.body.flatNumber)
-    const result = alarm.save();
+    const alarm = new AlarmModel(req.body.type, req.body.number)
+    const result = await alarm.save();
     res.json(result);
   }
 }

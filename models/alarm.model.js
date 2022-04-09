@@ -1,5 +1,5 @@
 const Db = require("../db");
-const { getAll, getOne } = require("../utils/promisify");
+const { getAll, addOne } = require("../utils/promisify");
 
 class AlarmModel {
   constructor(type, number) {
@@ -13,10 +13,10 @@ class AlarmModel {
   }
 
   async save() {
-    const query = Db.execute(`INSERT INTO alarm (type, number) VALUES (?, ?)`, [
-      this.type,
-      this.number,
-    ]);
+    const query = Db.execute(
+      `INSERT INTO alarm (type, number, time) VALUES (?, ?, ?)`,
+      [this.type, this.number, new Date().toISOString()]
+    );
 
     return await addOne(query);
   }

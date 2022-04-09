@@ -12,8 +12,8 @@ class UsersModel {
     const user = await getOne(query);
 
     return user.success && user.result.password === password
-      ? user
-      : { error: true, message: "password not correct" };
+      ? { success: true }
+      : { success: false, message: "password not correct" };
   }
 }
 

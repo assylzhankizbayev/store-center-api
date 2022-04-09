@@ -5,7 +5,7 @@ exports.getAll = (promise) =>
 
 exports.getOne = (promise) =>
   promise
-    .then(([rows]) => ({ success: !!rows, result: rows[0] }))
+    .then(([rows]) => ({ success: !!rows[0], result: rows[0] }))
     .catch((error) => ({ success: false, error }));
 
 exports.addOne = (promise) =>

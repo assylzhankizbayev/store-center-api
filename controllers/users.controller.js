@@ -1,4 +1,4 @@
-const UsersModel = require('../models/users.model');
+const UsersModel = require("../models/users.model");
 
 class UsersController {
   async getUsers(req, res) {
@@ -8,7 +8,12 @@ class UsersController {
 
   async login(req, res) {
     const result = await UsersModel.login(req.body);
-    res.json(result);
+
+    if (result.success) {
+      res.json(result);
+    } else {
+      res.status(400).json(result);
+    }
   }
 }
 
